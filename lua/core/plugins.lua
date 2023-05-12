@@ -72,4 +72,5 @@ require("lazy").setup({
 	{ "phaazon/hop.nvim" },
 	{ "hrsh7th/vim-vsnip" },
 	{ "hrsh7th/vim-vsnip-integ" },
+    { "Shatur/neovim-session-manager", event = "BufWritePost", cmd = "SessionManager" },
 })
