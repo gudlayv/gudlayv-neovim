@@ -34,10 +34,10 @@ require("lualine").setup({
 	options = {
 		theme = "dracula",
 		component_separators = "|",
-		section_separators = { right = "" },
+		section_separators = {},
 	},
 	sections = {
-		lualine_a = { { "mode", separator = { left = "" }, right_padding = 2 } },
+		lualine_a = { { "mode", right_padding = 2 } },
 		lualine_b = {
 			"filename",
 			"branch",
@@ -48,7 +48,7 @@ require("lualine").setup({
 		lualine_x = {},
 		lualine_y = { require("lsp-progress").progress, "filetype", "progress" },
 		lualine_z = {
-			{ "location", separator = { right = "" }, left_padding = 2 },
+			{ "location", left_padding = 2 },
 		},
 	},
 	inactive_sections = {
