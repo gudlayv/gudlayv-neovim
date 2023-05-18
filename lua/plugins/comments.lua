@@ -1,3 +1,1 @@
-require('nvim_comment').setup({
-    operator_mapping = "<leader>c"
-})
+require('nvim_comment').setup()

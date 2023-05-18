@@ -22,6 +22,8 @@ vim.keymap.set("n", "<leader>w", ":w<CR>")
 vim.keymap.set("n", "<leader>q", ":q<CR>")
 vim.keymap.set("i", "jj", "<Esc>")
 vim.keymap.set("n", "<leader>h", ":nohlsearch<CR>")
+vim.keymap.set("n", "<leader>r", "<cmd>LspRestart<cr>")
+
 
 -- Tabs
 vim.keymap.set("n", "<Tab>", ":BufferLineCycleNext<CR>")
