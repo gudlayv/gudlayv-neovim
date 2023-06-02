@@ -5,7 +5,6 @@ null_ls.setup({
 	sources = {
 		null_ls.builtins.formatting.eslint_d,
 		null_ls.builtins.diagnostics.eslint_d,
-		null_ls.builtins.formatting.lua_format,
 		null_ls.builtins.formatting.stylua,
 		null_ls.builtins.diagnostics.ltrs,
 		null_ls.builtins.formatting.rustfmt,
@@ -30,3 +29,9 @@ null_ls.setup({
 		end
 	end,
 })
+vim.keymap.set('n', '<Leader>lf',
+    function() vim.lsp.buf.format({
+        filter = function(client) 
+            return client.name =='null-ls' 
+        end})  
+    end)
