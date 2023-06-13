@@ -1,54 +1,51 @@
+vim.cmd("autocmd!")
+
+vim.g.loaded_netrwPlugin = 1
+vim.g.loaded_netrw = 1
+vim.g.NERDTreeHijackNetrw = 0
+
+
+vim.scriptencoding = "utf-8"
+vim.opt.encoding = "utf-8"
+vim.opt.fileencoding = "utf-8"
+
 vim.wo.number = true
 vim.wo.relativenumber = true
 
-vim.g.did_load_filetypes = 1
-vim.g.formatoptions = "qrn1"
-vim.opt.showmode = false
-vim.opt.updatetime = 100
-vim.wo.signcolumn = "yes"
-vim.opt.scrolloff = 8
-vim.opt.wrap = false
-vim.wo.linebreak = true
-vim.opt.virtualedit = "block"
-vim.opt.undofile = true
-vim.opt.shell = "/bin/zsh"
-
--- Mouse
-vim.opt.mouse = "a"
-vim.opt.mousefocus = true
-
--- Line Numbers
-vim.opt.number = true
-vim.opt.relativenumber = true
-
--- Splits
-vim.opt.splitbelow = true
-vim.opt.splitright = true
-
--- Clipboard
-vim.opt.clipboard = "unnamedplus"
-
--- Shorter messages
-vim.opt.shortmess:append("c")
-
--- Indent Settings
+vim.opt.title = true
+vim.opt.autoindent = true
+vim.opt.hlsearch = true
+vim.opt.backup = false
+vim.opt.showmode = true
+vim.opt.cmdheight = 1
+vim.opt.laststatus = 2
 vim.opt.expandtab = true
-vim.opt.shiftwidth = 4
-vim.opt.tabstop = 4
-vim.opt.softtabstop = 4
-vim.opt.smartindent = true
+vim.opt.scrolloff = 10
+vim.opt.shell = 'fish'
+vim.opt.backupskip = '/tmp/*,/private/tpm/*'
+vim.opt.inccommand = 'split'
+vim.opt.ignorecase = true
+vim.opt.smarttab = true
+vim.opt.ai = true    -- Auto indent
+vim.opt.si = true    -- Smart indent
+vim.opt.wrap = false -- No wrap line
+vim.opt.backspace = 'start,eol,indent'
+vim.opt.path:append { '**' }
+vim.opt.wildignore:append { '*/node_modules/*' }
 
--- Fillchars
-vim.opt.fillchars = {
-    vert = "│",
-    fold = "⠀",
-    eob = " ", -- suppress ~ at EndOfBuffer
-    -- diff = "⣿", -- alternatives = ⣿ ░ ─ ╱
-    msgsep = "‾",
-    foldopen = "▾",
-    foldsep = "│",
-    foldclose = "▸"
-}
+-- Undercurl
+vim.cmd([[let &t_Cs = "\e[4:3m"]])
+vim.cmd([[let &t_Ce = "\e[4:0m"]])
+-- but this doesn't work on iTerm2
 
-vim.cmd([[highlight clear LineNr]])
-vim.cmd([[highlight clear SignColumn]])
+-- Turn off paste mode wneb leaving insert
+vim.api.nvim_create_autocmd("InsertLeave", {
+        pattern = '*',
+        command = "set nopaste"
+})
+
+vim.opt.formatoptions:append { 'r' }
+
+vim.opt.clipboard:append { 'unnamedplus' }
+
+vim.opt.clipboard:append { 'unnamedplus' }
