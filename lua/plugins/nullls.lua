@@ -22,7 +22,7 @@ null_ls.setup({
 		}),
 		null_ls.builtins.diagnostics.fish,
 		null_ls.builtins.formatting.stylua,
-		null_ls.builtins.formatting.prettierd,
+		null_ls.builtins.formatting.prettier,
 	},
 	on_attach = function(client, bufnr)
 		if client.supports_method("textDocument/formatting") then
@@ -49,3 +49,8 @@ vim.keymap.set("n", "<Leader>lf", function()
 		end,
 	})
 end)
+
+vim.api.nvim_create_user_command("NullLsToggle", function()
+	-- you can also create commands to disable or enable sources
+	null_ls.toggle({})
+end, {})

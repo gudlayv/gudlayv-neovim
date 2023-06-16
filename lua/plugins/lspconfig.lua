@@ -115,14 +115,9 @@ nvim_lsp.lua_ls.setup({
 	},
 })
 
-nvim_lsp.tailwindcss.setup({
-	on_attach = on_attach,
-	capabilities = capabilities,
-})
-
 nvim_lsp.volar.setup({})
-nvim_lsp.volar_html.setup({})
-nvim_lsp.volar_doc.setup({})
+--nvim_lsp.volar_html.setup({})
+--nvim_lsp.volar_doc.setup({})
 
 nvim_lsp.cssls.setup({
 	on_attach = on_attach,
