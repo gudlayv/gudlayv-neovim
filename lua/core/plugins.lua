@@ -31,7 +31,12 @@ require("lazy").setup({
 		end,
 	},
 	{ "glepnir/lspsaga.nvim" }, -- LSP UIs
-	{ "nvim-treesitter/nvim-treesitter" },
+	{
+		"nvim-treesitter/nvim-treesitter",
+		dependencies = {
+			"JoosepAlviste/nvim-ts-context-commentstring",
+		},
+	},
 	{ "nvim-lua/plenary.nvim" }, -- Common utilities
 	{ "onsails/lspkind-nvim" }, -- vscode-like pictograms
 	{ "hrsh7th/cmp-buffer" }, -- nvim-cmp source for buffer words
@@ -81,4 +86,11 @@ require("lazy").setup({
 
 	{ "lewis6991/gitsigns.nvim" },
 	{ "dinhhuy258/git.nvim" },
+
+	{
+		"numToStr/Comment.nvim",
+		dependencies = {
+			"JoosepAlviste/nvim-ts-context-commentstring",
+		},
+	},
 })
