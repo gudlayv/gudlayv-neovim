@@ -12,7 +12,8 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({
-	{ "dracula/vim" },
+	-- { "dracula/vim" },
+        { "ellisonleao/gruvbox.nvim", priority = 1000 },
 	{ "nvim-lualine/lualine.nvim" },
 	{
 		"nvim-lualine/lualine.nvim",
