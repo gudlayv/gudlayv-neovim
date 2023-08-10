@@ -67,6 +67,8 @@ protocol.CompletionItemKind = {
 -- Set up completion using nvim_cmp with LSP source
 local capabilities = require('cmp_nvim_lsp').default_capabilities()
 
+nvim_lsp.volar.setup {}
+
 nvim_lsp.flow.setup {
         on_attach = on_attach,
         capabilities = capabilities
