@@ -5,19 +5,12 @@ end
 
 bufferline.setup({
 	options = {
-		mode = "buffers",
+		mode = "tabs",
 		separator_style = "slant",
 		always_show_bufferline = true,
-		buffer_close_icon = "x",
+		show_buffer_close_icons = false,
+		show_close_icon = false,
 		color_icons = true,
-		offsets = {
-			{
-				filetype = "neo-tree",
-				text = "File Explorer",
-				separator = true,
-				padding = 1,
-			},
-		},
 	},
 	highlights = {
 		separator = {
@@ -37,9 +30,6 @@ bufferline.setup({
 		},
 		fill = {
 			bg = "#073642",
-		},
-		close_button = {
-			bg = "#002b36",
 		},
 	},
 })

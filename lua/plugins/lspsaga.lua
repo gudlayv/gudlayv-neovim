@@ -1,35 +1,33 @@
 local status, saga = pcall(require, "lspsaga")
-if not status then
-	return
-end
+if (not status) then return end
 
 saga.setup({
-	ui = {
-		winblend = 10,
-		border = "rounded",
-		colors = {
-			normal_bg = "#002b36",
-		},
-	},
-	symbol_in_winbar = {
-		enable = false,
-	},
+        ui = {
+                border = 'rounded',
+        },
+        symbol_in_winbar = {
+                enable = false
+        },
+        lightbulb = {
+                enable = false
+        },
+        outline = {
+                layout = 'float'
+        }
 })
 
 local diagnostic = require("lspsaga.diagnostic")
 local opts = { noremap = true, silent = true }
-local keymap = vim.keymap
-keymap.set("n", "<C-j>", "<Cmd>Lspsaga diagnostic_jump_next<CR>", opts)
-keymap.set("n", "gl", "<Cmd>Lspsaga show_line_diagnostics<CR>", opts)
-keymap.set("n", "K", "<Cmd>Lspsaga hover_doc<CR>", opts)
-keymap.set("n", "gd", "<Cmd>Lspsaga finder<CR>", opts)
-keymap.set("i", "<C-k>", "<cmd>lua vim.lsp.buf.signature_help()<CR>", opts)
-keymap.set("n", "gp", "<Cmd>Lspsaga peek_definition<CR>", opts)
-keymap.set("n", "gr", "<Cmd>Lspsaga rename<CR>", opts)
-keymap.set("n", "gt", "<cmd>Lspsaga peek_type_definition<CR>")
-keymap.set("n", "gT", "<cmd>Lspsaga goto_type_definition<CR>")
-keymap.set("n", "[d", "<cmd>Lspsaga diagnostic_jump_next<CR>")
-keymap.set("n", "]d", "<cmd>Lspsaga diagnostic_jump_prev<CR>")
+vim.keymap.set('n', 'g]', '<Cmd>Lspsaga diagnostic_jump_next<CR>', opts)
+vim.keymap.set('n', 'g[', '<Cmd>Lspsaga diagnostic_jump_prev<CR>', opts)
+vim.keymap.set('n', 'gl', '<Cmd>Lspsaga show_line_diagnostics<CR>', opts)
+vim.keymap.set('n', 'K', '<Cmd>Lspsaga hover_doc<CR>', opts)
+vim.keymap.set('n', 'gd', '<Cmd>Lspsaga finder<CR>', opts)
+vim.keymap.set('n', 'gt', '<Cmd>Lspsaga goto_type_definition<CR>', opts)
+-- vim.keymap.set('i', '<C-k>', '<Cmd>Lspsaga signature_help<CR>', opts)
+vim.keymap.set('i', '<C-k>', '<cmd>lua vim.lsp.buf.signature_help()<CR>', opts)
+vim.keymap.set('n', 'gp', '<Cmd>Lspsaga peek_definition<CR>', opts)
+vim.keymap.set('n', 'gr', '<Cmd>Lspsaga rename<CR>', opts)
 
 -- code action
-vim.keymap.set({ "n", "v" }, "<leader>la", "<cmd>Lspsaga code_action<CR>")
+vim.keymap.set({ "n", "v" }, "<leader>ca", "<cmd>Lspsaga code_action<CR>")
