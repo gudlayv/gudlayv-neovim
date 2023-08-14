@@ -22,6 +22,7 @@ vim.fn.sign_define("DiagnosticSignHint", { text = "", texthl = "DiagnosticSig
 
 local status1, neo_tree = pcall(require, 'neo-tree')
 if (not status1) then return end
+
 neo_tree.setup({
         default_component_configs = {
                 icon = {

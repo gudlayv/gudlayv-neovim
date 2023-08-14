@@ -12,7 +12,6 @@ keymap.set("n", "-", "<C-x>")
 keymap.set("n", "<C-a>", "gg<S-v>G")
 
 -- NeoTree
-keymap.set("n", "<leader>f", ":Neotree float focus toggle<CR>")
 keymap.set("n", "<leader>E", ":Neotree focus % <CR>")
 keymap.set("n", "<leader>e", ":Neotree focus toggle<CR>")
 keymap.set("n", "<leader>o", ":Neotree float git_status<CR>")
@@ -40,15 +39,14 @@ keymap.set("n", "<leader>p", ":let @+ = fnamemodify(expand('%'), ':.')<cr>")
 keymap.set("n", "<Tab>", ":BufferLineCycleNext<CR>")
 keymap.set("n", "<s-Tab>", ":BufferLineCyclePrev<CR>")
 keymap.set("n", "<leader>c", ":bdelete<CR>")
-keymap.set("n", "<leader>bc", ":bdelete<CR>")
 keymap.set("n", "<leader>bx", ":BufferLinePickClose<CR>")
-keymap.set("n", "<leader>bC", ":BufferLineGroupClose ungrouped<CR>")
+keymap.set("n", "<leader>bc", ":BufferLineGroupClose ungrouped<CR>")
 
 -- Terminal
 keymap.set("n", "<leader>tf", ":ToggleTerm direction=float<CR>")
 keymap.set("n", "<leader>th", ":ToggleTerm direction=horizontal<CR>")
 keymap.set("n", "<leader>gg", function()
-	_G._LAZYGIT_TOGGLE()
+        _G._LAZYGIT_TOGGLE()
 end)
 
 -- Session
