@@ -22,6 +22,7 @@ ts.setup({
                 "css",
                 "html",
                 "lua",
+                "vue",
         },
         autotag = {
                 enable = true,

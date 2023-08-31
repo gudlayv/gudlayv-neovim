@@ -69,6 +69,12 @@ local capabilities = require('cmp_nvim_lsp').default_capabilities()
 
 nvim_lsp.volar.setup {}
 
+
+nvim_lsp.tailwindcss.setup {
+        on_attach = on_attach,
+        capabilities = capabilities
+}
+
 nvim_lsp.flow.setup {
         on_attach = on_attach,
         capabilities = capabilities
