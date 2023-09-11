@@ -67,7 +67,11 @@ protocol.CompletionItemKind = {
 -- Set up completion using nvim_cmp with LSP source
 local capabilities = require('cmp_nvim_lsp').default_capabilities()
 
-nvim_lsp.volar.setup {}
+nvim_lsp.volar.setup {
+        filetypes = {
+                'typescript', 'javascript', 'javascriptreact', 'typescriptreact', 'vue', 'json' },
+
+}
 
 
 nvim_lsp.tailwindcss.setup {

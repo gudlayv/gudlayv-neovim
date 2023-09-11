@@ -31,3 +31,4 @@ vim.keymap.set('n', 'gr', '<Cmd>Lspsaga rename<CR>', opts)
 
 -- code action
 vim.keymap.set({ "n", "v" }, "<leader>la", "<cmd>Lspsaga code_action<CR>")
+vim.keymap.set({ "n" }, "<leader>lf", "<cmd>lua vim.lsp.buf.format()<CR>")
