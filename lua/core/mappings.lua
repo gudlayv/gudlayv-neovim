@@ -21,6 +21,7 @@ keymap.set("n", "<c-k>", ":wincmd k<CR>", { silent = true })
 keymap.set("n", "<c-j>", ":wincmd j<CR>", { silent = true })
 keymap.set("n", "<c-h>", ":wincmd h<CR>", { silent = true })
 keymap.set("n", "<c-l>", ":wincmd l<CR>", { silent = true })
+keymap.set("n", "<c-c>", ":wincmd l<CR>", { silent = true })
 keymap.set("n", "<leader>/", ":CommentToggle<CR>", { silent = true })
 
 -- Splits
@@ -33,7 +34,8 @@ keymap.set("n", "<leader>q", ":q<CR>")
 keymap.set("i", "jj", "<Esc>")
 keymap.set("n", "<leader>h", ":nohlsearch<CR>")
 keymap.set("n", "<leader>r", "<cmd>LspRestart<cr>")
-keymap.set("n", "<leader>p", ":let @+ = fnamemodify(expand('%'), ':.')<cr>")
+keymap.set("n", "<leader>P", ":let @+ = fnamemodify(expand('%'), ':.')<cr>")   -- copy relative path to file
+keymap.set("n", "<leader>p", ":let @+ = fnamemodify(expand('%'), ':t:r')<cr>") -- copy name file
 
 -- Tabs
 keymap.set("n", "<Tab>", ":BufferLineCycleNext<CR>")
@@ -55,3 +57,9 @@ keymap.set("n", "<leader>Ss", "<cmd>SessionManager! save_current_session<cr>")
 keymap.set("n", "<leader>Sd", "<cmd>SessionManager! delete_session<cr>")
 keymap.set("n", "<leader>Sf", "<cmd>SessionManager! load_session<cr>")
 keymap.set("n", "<leader>S.", "<cmd>SessionManager! load_current_dir_session<cr>")
+
+
+-- LSP
+keymap.set("n", "gd", "<cmd>Telescope lsp_definitions<cr>")
+keymap.set("n", "gr", "<cmd>Telescope lsp_references<cr>")
+keymap.set("n", "<leader>ls", "<cmd>Telescope lsp_document_symbols<cr>")

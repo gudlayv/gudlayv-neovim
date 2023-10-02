@@ -76,4 +76,10 @@ require("lazy").setup({
                 "kevinhwang91/nvim-ufo",
                 dependencies = { "kevinhwang91/promise-async" },
         },
+        {
+                "danymat/neogen",
+                dependencies = "nvim-treesitter/nvim-treesitter",
+                config = true,
+                version = "*"
+        }
 })
